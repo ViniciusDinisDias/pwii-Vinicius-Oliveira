@@ -63,9 +63,113 @@ Após instalar o PHP, o Composer e o instalador do Laravel, você estará pronto
 
     laravel new example-app
 
-Depois que o aplicativo for criado, você pode iniciar o servidor de desenvolvimento local do Laravel, o queue worker e o servidor de desenvolvimento Vite usando o `dev`script do Composer:
+## ⚙️ Parte 2: Configurando um Projeto Laravel
 
-    cd example-app
-    npm install && npm run build
-    composer run dev
-Após iniciar o servidor de desenvolvimento, sua aplicação estará acessível no seu navegador em [http://localhost:8000](http://localhost:8000/) . Agora, você está pronto para [dar os próximos passos no ecossistema Laravel](https://laravel.com/docs/12.x/installation#next-steps) . Claro, você também pode querer [configurar um banco de dados](https://laravel.com/docs/12.x/installation#databases-and-migrations) .
+### 1. **Acesse a pasta do seu projeto Laravel no PowerShell**
+
+Se você já tem o projeto Laravel baixado (por exemplo, via Git), entre na pasta com:
+
+```bash
+cd caminho\da\sua\pasta
+```
+
+Exemplo:
+
+```bash
+cd C:\Users\seuUsuario\Documents\projeto-laravel
+```
+
+### 2. **Instalar as dependências PHP com o Composer**
+
+No terminal:
+
+```bash
+composer install
+```
+
+* Isso criará a pasta `vendor/` com todas as bibliotecas do Laravel.
+
+### 3. **Instalar as dependências do front-end (JavaScript)**
+
+No mesmo terminal:
+
+```bash
+npm install
+```
+
+* Este comando instalará as bibliotecas JavaScript que o Laravel utiliza (ex: Vite, Tailwind, etc).
+
+### 4. **Compilar os arquivos JS/CSS**
+
+Após o `npm install`, rode:
+
+```bash
+npm run build
+```
+
+* Esse comando vai gerar os arquivos compilados e prontos para uso no navegador.
+
+---
+
+### 5. **Configurar o arquivo `.env`**
+
+1. **Abra o Visual Studio Code** (VS Code).
+
+   ```bash
+   code .
+   ```
+
+2. No VS Code, localize o arquivo `.env.example`.
+
+3. Clique com o botão direito sobre ele e escolha **Copiar**. Em seguida, clique com o botão direito na pasta e escolha **Colar**.
+
+4. Renomeie o novo arquivo de `env.example` para `.env` (inclua o ponto no início!).
+
+5. Este arquivo `.env` é onde ficam as configurações da aplicação, como nome do app, conexão com banco de dados, porta etc.
+
+---
+
+### 6. **Gerar a chave única do Laravel**
+
+No terminal PowerShell:
+
+```bash
+php artisan key:generate
+```
+
+* Este comando cria uma chave de segurança única para o projeto funcionar corretamente.
+
+---
+
+### 7. **Executar as migrações do banco de dados**
+
+Ainda no terminal:
+
+```bash
+php artisan migrate
+```
+
+* Ele vai perguntar se você deseja continuar. Digite `yes` e pressione Enter.
+
+* Esse comando cria as tabelas padrão do Laravel no banco de dados configurado no seu `.env`.
+
+---
+
+## ✅ Pronto!
+
+Seu projeto Laravel agora está:
+
+* Com as dependências instaladas
+* Arquivos JS compilados
+* Ambiente `.env` configurado
+* Tabelas do banco criadas
+
+Se quiser iniciar o servidor Laravel:
+
+```bash
+php artisan serve
+```
+
+Acesse no navegador: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
