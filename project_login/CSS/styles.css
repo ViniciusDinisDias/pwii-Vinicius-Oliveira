@@ -1,0 +1,213 @@
+/* estilo.css */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --danger-color: #dc3545;
+    --background-light: #f8f9fa;
+    --text-dark: #343a40;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+    flex-grow: 1; 
+}
+
+/* Formulário/Wrapper */
+.wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Inputs e Botões */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Header do Painel */
+.header-painel {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ffc107; /* Cor de destaque para o avatar */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 8px 15px;
+}
+
+/* Detalhes do Usuário no Painel */
+.user-details {
+    margin-top: 20px;
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.user-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-details li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.user-details strong {
+    color: var(--primary-color);
+    display: inline-block;
+    min-width: 120px;
+}
+
+/* Adicione isso ao seu estilo.css */
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.alerta-sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+}
+
+/* Garante que os botões do cabeçalho sejam responsivos */
+@media (max-width: 600px) {
+    .header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .header-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .wrapper {
+        margin: 20px 10px;
+    }
+    .header-painel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .header-painel .btn-danger {
+        width: 100%;
+    }
+}
